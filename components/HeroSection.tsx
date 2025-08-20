@@ -177,6 +177,7 @@ const HeroSection = () => {
           )}
         </AnimatePresence>
 
+
         {/* Floating Menu */}
         <FloatingMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       </section>
