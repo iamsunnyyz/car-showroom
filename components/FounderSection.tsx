@@ -34,9 +34,9 @@ const FounderSection = () => {
       <div className="sticky top-0 h-screen w-full z-0">
         <motion.div
           style={{ opacity: bgOpacity }}
-          className="absolute inset-0 bg-[url('/showroom.jpeg')] bg-cover bg-center"
+          className="absolute inset-0 bg-[url('/x3.webp')] bg-cover bg-center"
         >
-          <div className="absolute inset-0 bg-black opacity-70"></div>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
         </motion.div>
 
         {/* WHO ARE WE Heading */}
