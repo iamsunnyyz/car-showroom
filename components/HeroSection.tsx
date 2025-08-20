@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence, easeIn, easeOut, easeInOut } from 'framer-motion' // Import easing functions
+import { motion, AnimatePresence, easeOut, easeInOut } from 'framer-motion' // Removed unused easeIn
 import { FiSearch, FiMenu } from 'react-icons/fi'
 import ScrollDownIcon from './ScrollDownIcon'
 import FloatingMenu from './FloatingMenu'

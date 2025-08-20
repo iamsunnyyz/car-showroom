@@ -17,6 +17,12 @@ interface Car {
   location: string
   price: number
   featured: boolean
+  // ✅ Added optional icon fields so no `any` is needed
+  rupeeIcon?: string
+  dateIcon?: string
+  steeringIcon?: string
+  speedometerIcon?: string
+  locationIcon?: string
 }
 
 const CarList = () => {
@@ -71,7 +77,7 @@ const CarList = () => {
   }
 
   // pick center card details
-  const centerIndex = (currentIndex) % cars.length
+  const centerIndex = currentIndex % cars.length
   const centerCar = cars[centerIndex]
 
   return (
@@ -137,19 +143,19 @@ const CarList = () => {
 
               <div className="grid grid-cols-4 gap-6 max-w-lg mx-auto">
                 <div className="flex flex-col items-center">
-                  <Image src={(centerCar as any).dateIcon} alt="Date" width={28} height={28} />
+                  <Image src={centerCar.dateIcon!} alt="Date" width={28} height={28} />
                   <p className="text-gray-300 mt-1">{centerCar.year}</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src={(centerCar as any).steeringIcon} alt="Owner" width={28} height={28} />
+                  <Image src={centerCar.steeringIcon!} alt="Owner" width={28} height={28} />
                   <p className="text-gray-300 mt-1">{centerCar.owner}</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src={(centerCar as any).speedometerIcon} alt="KM" width={28} height={28} />
+                  <Image src={centerCar.speedometerIcon!} alt="KM" width={28} height={28} />
                   <p className="text-gray-300 mt-1">{centerCar.kmDriven}</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Image src={(centerCar as any).locationIcon} alt="Location" width={28} height={28} />
+                  <Image src={centerCar.locationIcon!} alt="Location" width={28} height={28} />
                   <p className="text-gray-300 mt-1">{centerCar.location}</p>
                 </div>
               </div>
@@ -157,7 +163,7 @@ const CarList = () => {
           </AnimatePresence>
         )}
 
-        {/* Nav arrows (moved slightly lower) */}
+        {/* Nav arrows */}
         <button
           onClick={handlePrev}
           className="absolute left-4 top-1/2 translate-y-[60%] z-10 bg-white/10 p-3 rounded-full hover:bg-white/20 border border-white/30"
